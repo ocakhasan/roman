@@ -3,12 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ocakhasan/roman/pkg/app"
-	"github.com/ocakhasan/roman/pkg/handler"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/ocakhasan/roman/pkg/app"
+	"github.com/ocakhasan/roman/pkg/handler"
 
 	"github.com/sirupsen/logrus"
 )
@@ -21,7 +22,7 @@ func main() {
 
 	httpPort := os.Getenv("PORT") // read the env
 	if httpPort == "" {
-		httpPort = "8000"
+		httpPort = "8080"
 	}
 
 	app := app.New(l)

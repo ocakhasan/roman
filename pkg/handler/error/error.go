@@ -9,8 +9,11 @@ import (
 )
 
 var (
-	// ErrEmptyLicencePlate shows that given barcode name is empty
-	ErrEmptyLicencePlate = errors.New("empty licence plate. Please provide a licence plate")
+	// ErrEmptyInput shows that given input is emptyx
+	ErrEmptyInput = errors.New("please provide an input")
+
+	// ErrInvalidInput shows that given input is not an integer
+	ErrInvalidInput = errors.New("please provide an integer")
 
 	// ErrUnsupportedMethod shows that requested method is not allowed
 	ErrUnsupportedMethod = errors.New("this method is not allowed in current url")
@@ -39,7 +42,9 @@ func WriteError(w http.ResponseWriter, err error) {
 		statusCode = http.StatusMethodNotAllowed
 	case ErrInvalidBody:
 		statusCode = http.StatusBadRequest
-	case ErrEmptyLicencePlate:
+	case ErrEmptyInput:
+		statusCode = http.StatusBadRequest
+	case ErrInvalidInput:
 		statusCode = http.StatusBadRequest
 	case ErrInvalidDeliveryPoint:
 		statusCode = http.StatusBadRequest
