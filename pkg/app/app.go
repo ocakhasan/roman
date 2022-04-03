@@ -39,7 +39,7 @@ func (s *Server) HandleRomanNumeral() http.HandlerFunc {
 
 			if len(minQuery) == 0 || len(maxQuery) == 0 {
 				s.l.Error("min or max value is not provided")
-				handlerError.WriteError(w, handlerError.ErrInvalidInput)
+				handlerError.WriteError(w, handlerError.ErrEmptyInput)
 				return
 			}
 
