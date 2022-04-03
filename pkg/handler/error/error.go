@@ -21,11 +21,8 @@ var (
 	// ErrInvalidBody shows request body is invalid
 	ErrInvalidBody = errors.New("request body is invalid")
 
-	// ErrInvalidDeliveryPoint shows that given delivery point is invalid.
-	ErrInvalidDeliveryPoint = errors.New("invalid delivery point name")
-
-	// ErrEmptyBarcode shows that given barcode name is empty
-	ErrEmptyBarcode = errors.New("empty barcode. Please provide a barcode")
+	// ErrMinBiggerThanMax shows request body is invalid
+	ErrMinBiggerThanMax = errors.New("min value cannot be larger than max")
 )
 
 // ErrorResponse represents error response body.
@@ -46,9 +43,7 @@ func WriteError(w http.ResponseWriter, err error) {
 		statusCode = http.StatusBadRequest
 	case ErrInvalidInput:
 		statusCode = http.StatusBadRequest
-	case ErrInvalidDeliveryPoint:
-		statusCode = http.StatusBadRequest
-	case ErrEmptyBarcode:
+	case ErrMinBiggerThanMax:
 		statusCode = http.StatusBadRequest
 	default:
 		statusCode = http.StatusInternalServerError
