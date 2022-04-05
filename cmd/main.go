@@ -25,8 +25,8 @@ func main() {
 		httpPort = "8080"
 	}
 
-	app := app.New(l)
-	router := handler.CreateHandler(app)
+	appAdobe := app.New(l)
+	router := handler.CreateHandler(appAdobe)
 
 	server := &http.Server{
 		Addr:    fmt.Sprintf(":%v", httpPort),

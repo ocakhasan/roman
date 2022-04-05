@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  trendyol:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    env_file:
+      - .env
+    environment:
+      PORT: ${ADOBE_APP_PORT}
+    container_name: adobe_case
+    ports:
+      - "${ADOBE_PROXY_PORT}:${ADOBE_APP_PORT}"
