@@ -20,6 +20,8 @@ func main() {
 		ctx = context.Background()
 	)
 
+	l.SetFormatter(&logrus.JSONFormatter{})
+
 	httpPort := os.Getenv("PORT") // read the env
 	if httpPort == "" {
 		httpPort = "8080"
