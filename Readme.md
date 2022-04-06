@@ -25,6 +25,20 @@ Extensions are implemented.
 - This project converts roman numerals between a range in parallel.
 - This project is containerized.
 
+### Makefile
+
+There are some helper scripts in `Makefile`.
+
+```bash
+> make help
+help                           This help.
+build                          builds the docker image
+run                            creates and runs the container
+stop                           stops the container
+down                           removes the container
+test                           runs test in all of the modules
+
+```
 
 ### Environment Variables
 
@@ -134,7 +148,7 @@ make test
 | Folder  | Description                                |
 | ------------- |--------------------------------------------|
 | cmd  | contains the main function of the program. |
-| internal  | roman conversion related files             |
+| internal  | roman conversion package                   |
 | pkg | http handlers                              |
 
 ## Tests
@@ -151,6 +165,8 @@ I added some error handling logics below.
 1. Check if any query parameter or min max query parameters are provided.
 2. Check if the provided query parameters are integers
 3. Check if min value is not bigger than the max value
+
+
 
 ## REFERENCES
 
