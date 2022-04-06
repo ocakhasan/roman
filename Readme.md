@@ -40,11 +40,9 @@ test                           runs test in all of the modules
 
 ```
 
-### Environment Variables
-
 There are 2 different ways of running the project.
 
-#### With Docker and Docker-compose
+### With Docker and Docker-compose
 
 Docker-compose gets 2 environment variables.
 
@@ -118,7 +116,7 @@ make down
 ```
 
 
-#### If you do not have Docker
+### If you do not have Docker
 
 You can provide an environment variable called the `PORT` or the program can use default 8000.
 
