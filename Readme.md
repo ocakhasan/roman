@@ -4,6 +4,14 @@
 
 ## How to build and run the project
 
+### INFO
+Extensions are implemented.
+
+- This project handles all of the roman numerals ranged between 1 - 3999.
+- This project converts roman numerals between a range in parallel.
+- This project is containerized.
+
+
 ### Environment Variables
 
 There are 2 different ways of running the project.
@@ -121,3 +129,12 @@ There are tests both in `pkg` and `internal` folders. For the `pkg`,
 the http requests are tested to see if the returned responses are correct.
 
 Tests in `internal` package is used to test if roman conversion is right. 
+
+## Error Handling
+
+I added some error handling logics below.
+
+1. Check if any query parameter or min max query parameters are provided.
+2. Check if the provided query parameters are integers
+3. Check if min value is not bigger than the max value
+4. Check if the numbers are in range.

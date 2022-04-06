@@ -1,3 +1,6 @@
+// package app implementing all of the required http
+// handlers to run the project
+
 package app
 
 import (
@@ -28,6 +31,8 @@ func New(l *logrus.Logger) Server {
 	}
 }
 
+// HandleRomanNumeral returns the necessary http handler
+// func to convert to roman.
 func (s *Server) HandleRomanNumeral() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("content-type", contentType)

@@ -1,3 +1,7 @@
+// package roman includes all functions which are used to
+// calculate roman numeral of an integer and
+// find all the roman numerals in a range
+
 package roman
 
 import (
@@ -12,6 +16,8 @@ var (
 	symbols = []string{"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"}
 )
 
+// ConvertIntegerToRoman converts given input
+// to roman numeral.
 func ConvertIntegerToRoman(input int) string {
 	var (
 		i      = len(nums) - 1
@@ -36,6 +42,8 @@ func ConvertIntegerToRoman(input int) string {
 // NumeralRange returns all the roman numerals of
 // the numbers between minValue and maxValue.
 // It handles all the operations in parallel to make it faster.
+// NumeralRange will have maxValue-minValue+1 goroutines to calculate
+// the roman numeral conversions.
 func NumeralRange(minValue, maxValue int) []structure.RomanResponse {
 	var (
 		length = maxValue - minValue + 1
@@ -46,7 +54,7 @@ func NumeralRange(minValue, maxValue int) []structure.RomanResponse {
 	wg.Add(length)
 
 	for i := range output {
-		go func(_number int, _i int) {
+		go func(_number int, _i int) { // calculate and append to result in background
 			output[_i] = structure.RomanResponse{
 				Input:  strconv.Itoa(_number),
 				Output: ConvertIntegerToRoman(_number),
@@ -56,7 +64,7 @@ func NumeralRange(minValue, maxValue int) []structure.RomanResponse {
 		}(minValue+i, i)
 	}
 
-	wg.Wait()
+	wg.Wait() // wait all of goroutines to stop.
 
 	return output
 }

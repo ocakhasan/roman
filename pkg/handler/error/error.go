@@ -15,12 +15,6 @@ var (
 	// ErrInvalidInput shows that given input is not an integer
 	ErrInvalidInput = errors.New("please provide an integer")
 
-	// ErrUnsupportedMethod shows that requested method is not allowed
-	ErrUnsupportedMethod = errors.New("this method is not allowed in current url")
-
-	// ErrInvalidBody shows request body is invalid
-	ErrInvalidBody = errors.New("request body is invalid")
-
 	// ErrMinBiggerThanMax shows request body is invalid
 	ErrMinBiggerThanMax = errors.New("min value cannot be larger than max")
 )
@@ -35,10 +29,6 @@ type ErrorResponse struct {
 func WriteError(w http.ResponseWriter, err error) {
 	var statusCode int
 	switch err {
-	case ErrUnsupportedMethod:
-		statusCode = http.StatusMethodNotAllowed
-	case ErrInvalidBody:
-		statusCode = http.StatusBadRequest
 	case ErrEmptyInput:
 		statusCode = http.StatusBadRequest
 	case ErrInvalidInput:
