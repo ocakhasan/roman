@@ -2,6 +2,20 @@
 
 ## Definition (Wikipedia)
 
+Roman numerals are a numeral system that originated in ancient Rome and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages. Numbers in this system are represented by combinations of letters from the Latin alphabet. Modern style uses seven symbols, each with a fixed integer value (Wikipedia)
+
+### Some Roman Numerals
+
+| Symbol | Value |
+|--------|-------|
+| I      | 1     |
+| V      | 5     |
+| X      | 10    |
+| L      | 50    |
+| C      | 100   |
+| D      | 500   |
+| M      | 1000  |
+
 ## How to build and run the project
 
 ### INFO
@@ -137,4 +151,7 @@ I added some error handling logics below.
 1. Check if any query parameter or min max query parameters are provided.
 2. Check if the provided query parameters are integers
 3. Check if min value is not bigger than the max value
-4. Check if the numbers are in range.
+
+## REFERENCES
+
+[Wikipedia - Roman Numerals](https://en.wikipedia.org/wiki/Roman_numerals)
