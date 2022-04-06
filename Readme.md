@@ -21,9 +21,9 @@ Roman numerals are a numeral system that originated in ancient Rome and remained
 ### INFO
 Extensions are implemented.
 
-- This project handles all of the roman numerals ranged between 1 - 3999.
-- This project converts roman numerals between a range in parallel.
-- This project is containerized.
+- This project handles all of the roman numerals ranged between 1 - 3999. (Extension 1)
+- This project converts roman numerals between a range in parallel. (Extension 2)
+- This project is containerized and has ci integration. (Extension 3)
 
 ### Makefile
 
